@@ -1,0 +1,24 @@
+<mat-toolbar color="primary" class="heading1">{{ heading1 }}</mat-toolbar>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav
+    [mode]="sidenavMode"
+    [opened]="!isSmallScreen"
+    [position]="'end'"
+    [fixedInViewport]="false">
+    
+    <mat-toolbar color="accent" class="heading3">{{ heading3 }}</mat-toolbar>
+    
+  </mat-sidenav>
+
+  <mat-toolbar color="warn" class="heading2">
+    {{ heading2 }}
+    <input type="search" *ngIf="showSearch" [formControl]="searchControl" class="nav-spacer" placeholder="Search">
+    <span class="spacer"></span>
+    <button *ngIf="isSmallScreen" mat-mini-fab>
+      <mat-icon aria-label="close sidenav" color="primary" (click)="sidenav.toggle()">menu</mat-icon>
+    </button>
+  </mat-toolbar>
+
+  <router-outlet (activate)='onActivate($event)'></router-outlet>
+
+</mat-sidenav-container>

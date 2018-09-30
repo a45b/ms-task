@@ -1,0 +1,29 @@
+mat-sidenav-container {
+  min-height: 100vh;
+  overflow-y: auto; 
+}
+
+mat-sidenav {  
+  width: 300px;  
+  background: skyblue;
+} 
+
+input.nav-spacer {
+  flex: 1 1 auto;
+  border: 0;
+  background: #eb4e81;
+  margin: 0 0 0 10px;
+  padding: 8px;
+  font-size: 18px;
+}
+
+input.nav-spacer:focus { 
+  background-color: #f9b4ca;
+  outline: none;
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  input.nav-spacer {
+    margin-left: -10px;
+  }
+}

@@ -1,0 +1,36 @@
+<div *ngIf="itemList.length === 0; then emptyBlock; else listBlock">
+  this is ignored
+</div>
+
+<ng-template #listBlock>   
+  <div class="container">
+  <mat-card *ngFor="let item of itemList">
+    <div class="card-header">
+      <span class="spacer"></span>
+      <button mat-icon-button>             
+        <mat-icon *ngIf="item.isFavourite" color="accent" aria-label="remove from favorite" (click)="toggleFavorite(item, false)">star</mat-icon>
+        <mat-icon *ngIf="!item.isFavourite" aria-label="add to favorite" (click)="toggleFavorite(item, true)">star_border</mat-icon>
+      </button>
+    </div>
+    
+    <mat-card-content>
+      <h4 class="title">{{ item.title }}</h4>      
+      <button matTooltip="{{ item.info }}" mat-button>Info</button>
+    </mat-card-content>      
+    <mat-divider></mat-divider>
+    
+    <mat-card-actions align="end">
+      <a mat-button [routerLink]="['/details', item._id]" >OPEN</a>
+    </mat-card-actions>
+  </mat-card>  
+  </div>
+</ng-template>
+
+<ng-template #emptyBlock>
+  <div class="container">
+    <mat-card>
+      <mat-card-title *ngIf="!isError">No item found</mat-card-title>
+      <mat-card-title *ngIf="isError">Something went wrong</mat-card-title>
+    </mat-card>
+  </div>
+</ng-template>

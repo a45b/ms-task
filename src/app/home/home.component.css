@@ -1,0 +1,54 @@
+
+mat-card {
+  margin: 15px;
+  width: 300px;
+}
+
+mat-card-content h4.title {
+  text-align: center;
+}
+
+/***/
+
+mat-toolbar-row {
+  justify-content: space-between;
+}
+
+.example-icon {
+  padding: 0 14px;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+/***/
+
+.card-header {
+  display: flex;
+  flex-grow: 1;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+  flex-direction: row;
+  flex-wrap: wrap;  
+  flex-flow: row wrap;  
+  align-content: flex-end;
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  mat-card {
+    margin: 15px;
+    width: 100%;
+  }
+}
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+  mat-card {
+    margin: 15px;
+    width: 29%;
+  }
+}
